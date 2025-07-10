@@ -205,6 +205,40 @@ body {
     font-size: 18px;
 }
 
+.notes-section {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.notes-content {
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #6b7280;
+}
+
+.notes-content p {
+    margin-bottom: 12px;
+}
+
+.notes-content p:last-child {
+    margin-bottom: 0;
+}
+
+.notes-content strong {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    color: #1a1a1a;
+    font-weight: 500;
+    margin-top: 16px !important;
+}
+
 /* Guided mode states */
 body.guided-green {
     background-color: #10b981;
@@ -295,6 +329,21 @@ body.guided-amber .mode-btn.active,
 body.guided-red .mode-btn.active {
     background: rgba(255, 255, 255, 0.9);
     color: #1a1a1a;
+}
+
+body.guided-green .notes-content,
+body.guided-amber .notes-content,
+body.guided-red .notes-content {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+body.guided-green .notes-content strong,
+body.guided-amber .notes-content strong,
+body.guided-red .notes-content strong,
+body.guided-green .signature,
+body.guided-amber .signature,
+body.guided-red .signature {
+    color: #ffffff;
 }
 
 /* Responsive design */
