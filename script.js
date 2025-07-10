@@ -4,7 +4,7 @@ class SCATimer {
         this.remainingTime = this.totalTime;
         this.isRunning = false;
         this.interval = null;
-        this.currentMode = 'standard';
+        this.currentMode = 'guided';
         this.soundEnabled = true;
         
         this.initializeElements();
