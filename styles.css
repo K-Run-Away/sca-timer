@@ -92,6 +92,70 @@ body {
     transition: color 0.3s ease;
 }
 
+.demo-section {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.demo-text {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.demo-video {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: #f8f9fa;
+    display: inline-block;
+}
+
+.demo-gif {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+.demo-fallback {
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(45deg, #10b981, #f59e0b, #dc2626);
+    background-size: 300% 300%;
+    animation: gradientShift 5s ease-in-out infinite;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.demo-animation {
+    text-align: center;
+    color: white;
+}
+
+.demo-timer {
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 8px;
+}
+
+.demo-phase {
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    33% { background-position: 100% 50%; }
+    66% { background-position: 100% 100%; }
+    100% { background-position: 0% 50%; }
+}
+
 .controls {
     display: flex;
     gap: 12px;
@@ -313,5 +377,9 @@ body.guided-red .mode-btn.active {
     
     .title {
         font-size: 24px;
+    }
+    
+    .demo-gif {
+        max-width: 280px;
     }
 } 
