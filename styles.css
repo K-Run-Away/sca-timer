@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    transition: background-color 0.5s ease;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.timer-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+}
+
+.mode-selector {
+    display: flex;
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 4px;
+    margin-bottom: 40px;
+    gap: 4px;
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mode-btn.active {
+    background: #ffffff;
+    color: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timer-display {
+    margin-bottom: 40px;
+}
+
+.timer-text {
+    font-size: 64px;
+    font-weight: 300;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+    letter-spacing: -2px;
+    transition: color 0.3s ease;
+}
+
+.timer-text.warning {
+    color: #dc2626;
+}
+
+.phase-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #6b7280;
+    min-height: 27px;
+    transition: color 0.3s ease;
+}
+
+.controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.control-btn {
+    padding: 12px 24px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 80px;
+}
+
+.control-btn:hover:not(:disabled) {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.control-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.control-btn.primary {
+    background: #1a1a1a;
+    color: #ffffff;
+    border-color: #1a1a1a;
+}
+
+.control-btn.primary:hover:not(:disabled) {
+    background: #374151;
+}
+
+.settings {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.setting-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #1a1a1a;
+}
+
+.setting-label {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 400;
+}
+
+.feedback-section {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.feedback-text {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.feedback-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.feedback-btn {
+    padding: 8px 16px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+}
+
+.feedback-btn:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+    transform: scale(1.05);
+}
+
+.feedback-btn.clicked {
+    background: #1a1a1a;
+    color: #ffffff;
+    border-color: #1a1a1a;
+}
+
+.feedback-icon {
+    font-size: 18px;
+}
+
+/* Guided mode states */
+body.guided-green {
+    background-color: #10b981;
+}
+
+body.guided-amber {
+    background-color: #f59e0b;
+}
+
+body.guided-red {
+    background-color: #dc2626;
+}
+
+body.guided-green .timer-card,
+body.guided-amber .timer-card,
+body.guided-red .timer-card {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+body.guided-green .title,
+body.guided-amber .title,
+body.guided-red .title,
+body.guided-green .timer-text,
+body.guided-amber .timer-text,
+body.guided-red .timer-text,
+body.guided-green .phase-text,
+body.guided-amber .phase-text,
+body.guided-red .phase-text {
+    color: #ffffff;
+}
+
+body.guided-green .control-btn,
+body.guided-amber .control-btn,
+body.guided-red .control-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
+body.guided-green .control-btn:hover:not(:disabled),
+body.guided-amber .control-btn:hover:not(:disabled),
+body.guided-red .control-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+body.guided-green .setting-label,
+body.guided-amber .setting-label,
+body.guided-red .setting-label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+body.guided-green .feedback-text,
+body.guided-amber .feedback-text,
+body.guided-red .feedback-text {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+body.guided-green .feedback-btn,
+body.guided-amber .feedback-btn,
+body.guided-red .feedback-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
+body.guided-green .feedback-btn:hover,
+body.guided-amber .feedback-btn:hover,
+body.guided-red .feedback-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+body.guided-green .mode-selector,
+body.guided-amber .mode-selector,
+body.guided-red .mode-selector {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+body.guided-green .mode-btn,
+body.guided-amber .mode-btn,
+body.guided-red .mode-btn {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body.guided-green .mode-btn.active,
+body.guided-amber .mode-btn.active,
+body.guided-red .mode-btn.active {
+    background: rgba(255, 255, 255, 0.9);
+    color: #1a1a1a;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .container {
+        padding: 16px;
+    }
+    
+    .timer-card {
+        padding: 30px 20px;
+    }
+    
+    .timer-text {
+        font-size: 48px;
+    }
+    
+    .title {
+        font-size: 24px;
+    }
+} 

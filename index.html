@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCA Timer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="timer-card">
+            <h1 class="title">SCA Timer</h1>
+            
+            <div class="mode-selector">
+                <button class="mode-btn active" data-mode="standard">Standard</button>
+                <button class="mode-btn" data-mode="guided">Guided</button>
+            </div>
+            
+            <div class="timer-display">
+                <div class="timer-text" id="timer">12:00</div>
+                <div class="phase-text" id="phase-text"></div>
+            </div>
+            
+            <div class="controls">
+                <button class="control-btn" id="start-btn">Start</button>
+                <button class="control-btn" id="pause-btn" disabled>Pause</button>
+                <button class="control-btn" id="reset-btn">Reset</button>
+            </div>
+            
+            <div class="settings">
+                <label class="setting-item">
+                    <input type="checkbox" id="sound-toggle" checked>
+                    <span class="setting-label">Sound on completion</span>
+                </label>
+                <button class="control-btn" id="test-sound-btn" style="margin-top: 8px; font-size: 12px; padding: 8px 16px;">Test Sound</button>
+            </div>
+            
+            <div class="feedback-section" id="feedback-section">
+                <div class="feedback-text">How was your experience?</div>
+                <div class="feedback-buttons">
+                    <button class="feedback-btn" id="thumbs-up" data-rating="positive">
+                        <span class="feedback-icon">👍</span>
+                    </button>
+                    <button class="feedback-btn" id="thumbs-down" data-rating="negative">
+                        <span class="feedback-icon">👎</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <script src="script.js"></script>
+</body>
+</html> 
